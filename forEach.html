@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Recorrido de una array</h3>
+    <p id="escribeaqui"></p>
+        <script>
+            let txt = " ";
+            let txt2 = " ";
+            let txt3 = " ";
+            let txt4 = " ";
+
+            var dias=['Lunes','Martes','Miercoles', 'Jueves', 'Viernes'];
+            dias.forEach(mostrar);
+            function mostrar(valor, index, array){
+                txt=txt+valor+" "
+            }
+            document.getElementById("escribeaqui").innerHTML+= "<br>";
+            document.getElementById("escribeaqui").innerHTML=txt;
+            for (var i = 0; i < dias.length; i++) {
+                txt2=txt2+dias[i]+"--";
+            }
+
+            document.getElementById("escribeaqui").innerHTML+= "<br>";
+            document.getElementById("escribeaqui").innerHTML+=txt2;
+
+            //for...in
+            for (let index in dias) {
+                txt3 += dias[index] + " ";
+            }
+            document.getElementById("escribeaqui").innerHTML+= "<br>";
+            document.getElementById("escribeaqui").innerHTML += txt3;
+
+            //for...of
+            for (let dia of dias) {
+                txt4 += dia + " ";
+            }
+            document.getElementById("escribeaqui").innerHTML+= "<br>";
+            document.getElementById("escribeaqui").innerHTML += txt4;
+
+        </script>
+</body>
+</html>
