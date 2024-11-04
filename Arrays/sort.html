@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = ["uno","tres","dos"]; //Array de palabras
+        let array2 = array.slice(); //Copia de array
+        let array3 = array; //array3 apunta a la misma dirección de memoria que array
+
+        console.log(array.sort()); //Ordena array alfabéticamente
+
+        console.log(array2); // array2 no se ha modificado
+
+        console.log(array3); // array3 se ha modificado
+
+        let numeros = [2,7,1,5];
+        console.log(numeros.sort()); //Ordena alfabéticamente, no numéricamente
+        console.log(numeros.sort((a,b) => a - b)); //Ordena numéricamente
+
+    </script>
+</body>
+</html>

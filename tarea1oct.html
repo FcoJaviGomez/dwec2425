@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba async y defer</title>
+
+    <!-- Script sin atributos, se cargará y ejecutará inmediatamente -->
+    <script src="script1.js"></script>
+
+    <!-- Script con defer, se ejecutará después de que todo el HTML esté parseado -->
+    <script src="script2.js" defer></script>
+
+    <!-- Script con async, se ejecutará tan pronto como esté descargado -->
+    <script src="script3.js" async></script>
+</head>
+
+<body>
+    <script>
+        // Declaración e inicialización de las variables
+        // Primer contacto: Maxwell Wright
+        let nombre1 = "Maxwell Wright";
+        let telefono1 = "(0191) 719 6495";
+        let correo1 = "Curabitur.egestas.nunc@nonummyac.co.uk";
+
+        // Segundo contacto: Raja Villarreal
+        let nombre2 = "Raja Villarreal";
+        let telefono2 = "0866 398 2895";
+        let correo2 = "posuere.vulputate@sed.com";
+
+        // Tercer contacto: Helen Richards
+        let nombre3 = "Helen Richards";
+        let telefono3 = "0800 1111";
+        let correo3 = "libero@corvallis.edu";
+
+        // Mostrar en la consola el primer contacto
+        console.log("Primer contacto:");
+        console.log(`Nombre: ${nombre1}, Teléfono: ${telefono1}, Correo: ${correo1}`);
+
+        // Mostrar en la consola el último contacto
+        console.log("Último contacto:");
+        console.log(`Nombre: ${nombre3}, Teléfono: ${telefono3}, Correo: ${correo3}`);
+
+
+
+    </script>
+
+</body>
+
+</html>

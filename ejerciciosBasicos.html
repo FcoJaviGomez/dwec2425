@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. Programa que pida dos números y nos diga cuál es el mayor, el menor o si son iguales. Si no son números o son menores que cero, que lo vuelva a pedir
+        function compareNumbers() {
+            let num1, num2;
+            do {
+                num1 = parseFloat(prompt("Introduce el primer número (mayor o igual a 0):"));
+                num2 = parseFloat(prompt("Introduce el segundo número (mayor o igual a 0):"));
+            } while (isNaN(num1) || isNaN(num2) || num1 < 0 || num2 < 0);
+
+            if (num1 > num2) {
+                alert("El primer número es mayor.");
+            } else if (num1 < num2) {
+                alert("El segundo número es mayor.");
+            } else {
+                alert("Ambos números son iguales.");
+            }
+        }
+
+        // 2. Media y suma hasta meter número negativo
+        function mediaYSuma() {
+            let suma = 0, contador = 0, num;
+            do {
+                num = parseFloat(prompt("Introduce un número (negativo para terminar):"));
+                if (num >= 0) {
+                    suma += num;
+                    contador++;
+                }
+            } while (num >= 0);
+
+            let media = suma / contador;
+            alert(`Suma: ${suma}, Media: ${media}`);
+        }
+
+        // 3. Muestra los números entre dos introducidos por el usuario
+        function mostrarNumerosEntre() {
+            let num1 = parseInt(prompt("Introduce el primer número:"));
+            let num2 = parseInt(prompt("Introduce el segundo número:"));
+            let menor = Math.min(num1, num2);
+            let mayor = Math.max(num1, num2);
+
+            let numeros = [];
+            for (let i = menor + 1; i < mayor; i++) {
+                numeros.push(i);
+            }
+            alert(`Números entre ${menor} y ${mayor}: ${numeros.join(", ")}`);
+        }
+
+        // 4. Mostrar todos los impares que estén entre dos números introducidos por el usuario
+        function mostrarImparesEntre() {
+            let num1 = parseInt(prompt("Introduce el primer número:"));
+            let num2 = parseInt(prompt("Introduce el segundo número:"));
+            let menor = Math.min(num1, num2);
+            let mayor = Math.max(num1, num2);
+
+            let impares = [];
+            for (let i = menor + 1; i < mayor; i++) {
+                if (i % 2 !== 0) {
+                    impares.push(i);
+                }
+            }
+            alert(`Números impares entre ${menor} y ${mayor}: ${impares.join(", ")}`);
+        }
+
+        // 5. Mostrar todos los divisores de un número
+        function mostrarDivisores() {
+            let num = parseInt(prompt("Introduce un número:"));
+            let divisores = [];
+            for (let i = 1; i <= num; i++) {
+                if (num % i === 0) {
+                    divisores.push(i);
+                }
+            }
+            alert(`Divisores de ${num}: ${divisores.join(", ")}`);
+        }
+
+        // 6. Averiguar si un número es par o impar
+        function parOImpar() {
+            let num = parseInt(prompt("Introduce un número:"));
+            if (num % 2 === 0) {
+                alert(`${num} es par.`);
+            } else {
+                alert(`${num} es impar.`);
+            }
+        }
+
+        // 7. Tabla de multiplicar del número introducido por pantalla
+        function tablaMultiplicar() {
+            let num = parseInt(prompt("Introduce un número:"));
+            let tabla = [];
+            for (let i = 1; i <= 10; i++) {
+                tabla.push(`${num} x ${i} = ${num * i}`);
+            }
+            alert(`Tabla de multiplicar del ${num}:\n${tabla.join("\n")}`);
+        }
+
+        // 8. Todas las tablas
+        function todasLasTablas() {
+            let tablas = [];
+            for (let i = 1; i <= 10; i++) {
+                let tabla = [];
+                for (let j = 1; j <= 10; j++) {
+                    tabla.push(`${i} x ${j} = ${i * j}`);
+                }
+                tablas.push(`Tabla del ${i}:\n${tabla.join("\n")}`);
+            }
+            alert(tablas.join("\n\n"));
+        }
+
+        // 9. Calculadora
+        function calculadora() {
+            let num1, num2;
+            do {
+                num1 = parseFloat(prompt("Introduce el primer número:"));
+                num2 = parseFloat(prompt("Introduce el segundo número:"));
+            } while (isNaN(num1) || isNaN(num2));
+
+            let suma = num1 + num2;
+            let resta = num1 - num2;
+            let producto = num1 * num2;
+            let division = num1 / num2;
+
+            alert(`Suma: ${suma}\nResta: ${resta}\nProducto: ${producto}\nDivisión: ${division}`);
+            console.log(`Suma: ${suma}\nResta: ${resta}\nProducto: ${producto}\nDivisión: ${division}`);
+        }
+
+        // 10. Pedir dos números y decir si son múltiplos o no
+        function sonMultiplos() {
+            let num1 = parseInt(prompt("Introduce el primer número:"));
+            let num2 = parseInt(prompt("Introduce el segundo número:"));
+
+            if (num1 % num2 === 0 || num2 % num1 === 0) {
+                alert(`${num1} y ${num2} son múltiplos.`);
+            } else {
+                alert(`${num1} y ${num2} no son múltiplos.`);
+            }
+        }
+    </script>
+</body>
+</html>

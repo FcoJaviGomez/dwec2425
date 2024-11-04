@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*
+Realiza una aplicacion web que solicite una cadena de texto. el programa debe decir cuantas veces
+ocurre cada uno de estos patrones sin distingir mayusculas y nimusculas: "00" "101" "ABC" "HO". Un caracter
+puede formar parte de mas de un patron encontrado. Por ejemplo:
+la cadena "000"  el patron "00" aparece dos veces
+
+Internamente el programa realizara la cuenta de patrones con la funcion definida como funcion  numeroPatrones(texto)
+que devolvera un numero entero con el numero de patrones encontrados. 
+1110101000ABCHO
+*/
+console.time("Tiempo de ejecucion")
+let texto = prompt("Introduce una cadena de texto:")
+// console.time("Tiempo de ejecucion")
+function numeroPatrones(texto){
+  const patrones = ["00", "101", "ABC", "HO"];
+    let contador = 0;
+    texto = texto.toUpperCase();
+    for (let i of patrones) {
+        let patron = patrones[i].toUpperCase();
+        let indice = texto.indexOf(patron);
+        while(indice != -1){
+            contador++;
+            indice = texto.indexOf(patron, indice + 1);
+        }
+    }
+    return contador;
+}
+
+let resultado = numeroPatrones(texto)
+alert(`El numero de patrones encontrados es: ${resultado}`)
+
+console.timeEnd("Tiempo de ejecucion")
+
+
+/*
+for: Itera sobre una lista de elementos.
+for in: Itera sobre las propiedades de un objeto.
+for of: Itera sobre cualquier estructura iterable (arrays, strings, mapas, sets, etc.) y obtener directamente sus valores.
+*/
+
+
+
+    </script>
+</body>
+</html>

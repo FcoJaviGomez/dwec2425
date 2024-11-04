@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Solicitar una frase desde teclado, almacenar cada palabra en un elemento de un array y mostrar los siguientes datos:
+        •	La primera palabra de la frase.
+        •	La última palabra de la frase.
+        •	El número de palabras de la frase.
+        que puede meter mas palabras en la frase hasta que el usuario introduzca un no y pare el bucle.
+
+        añadir al programa que ordene alfabeticamente la array de palabras
+    -->
+    <script>
+        let frase = prompt("Introduce una frase:");
+
+        let palabras = frase.split(" ");
+
+        function mostrarDatos(palabras) {
+            window.alert(`La primera palabra de la frase es: ${palabras[0]}\n
+            La ultima palabra de la frase es: ${palabras[palabras.length - 1]}\n
+            El numero de palabras de la frase es: ${palabras.length}`);
+        }
+
+        function mostrarDatosAlfabeticamente(palabras) {
+            window.alert(`Palabras ordenadas alfabeticamente:\n${palabras.sort()}`);
+        }
+
+        mostrarDatosAlfabeticamente(palabras);
+
+        mostrarDatos(palabras);
+             
+        let continuar = prompt("¿Quieres introducir otra frase? (si/no)");
+
+        while(continuar == "si"){
+
+            let añadirFrase = prompt("Introduce una frase:");
+
+            let palabrasNuevas = añadirFrase.split(" ");
+
+            for(let i = 0; i < palabrasNuevas.length; i++){
+                 palabras.push(palabrasNuevas[i]);
+                 console.log(palabrasNuevas[i]);
+                }
+
+            mostrarDatos(palabras); 
+
+         continuar = prompt("¿Quieres introducir otra frase? (si/no)")
+        }
+
+    </script>
+</body>
+</html>
