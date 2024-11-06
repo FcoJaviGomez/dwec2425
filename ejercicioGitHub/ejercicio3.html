@@ -14,13 +14,18 @@
             { nombre: "Ana mena", telefono: "3333 333 333", email: "anam@gmail.com" }
         ];
 
+        // Declaración de constantes para almacenar los datos del nuevo contacto
+        const nuevoNombre = prompt("Introduce el nombre del nuevo contacto:");
+        const nuevoTelefono = prompt("Introduce el teléfono del nuevo contacto:");
+        const nuevoEmail = prompt("Introduce el email del nuevo contacto:");
+    
         // Añadir un nuevo contacto al array
-        contactos.push({ nombre: "Maisie Haley", telefono: "0913 531 3030", email: "risus.Quisque@urna.ca" });
-
+        contactos.push({ nombre: nuevoNombre, telefono: nuevoTelefono, email: nuevoEmail });
+    
         // Declaramos dos constantes para almacenar el primer y último contacto
         const primerContacto = contactos[0];
         const ultimoContacto = contactos[contactos.length - 1];
-
+    
         // Mostrar en pantalla el primer y último contacto
         document.write(`Primer contacto: ${primerContacto.nombre} / ${primerContacto.telefono} / ${primerContacto.email}<br>`);
         document.write(`Último contacto: ${ultimoContacto.nombre} / ${ultimoContacto.telefono} / ${ultimoContacto.email}`);
