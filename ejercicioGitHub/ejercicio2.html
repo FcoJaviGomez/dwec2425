@@ -7,17 +7,21 @@
 </head>
 <body>
     <script>
+        // Declaración de una constante de tipo array con objetos
         const contactos = [
             { nombre: "Javi Gómez", telefono: "1111 111 111", email: "javig@gmail.com" },
             { nombre: "Pepe sanz", telefono: "2222 222 222", email: "pepes@gmail.com" },
             { nombre: "Ana mena", telefono: "3333 333 333", email: "anam@gmail.com" }
         ];
 
+        // Añadir un nuevo contacto al array
         contactos.push({ nombre: "Maisie Haley", telefono: "0913 531 3030", email: "risus.Quisque@urna.ca" });
 
+        // Declaramos dos constantes para almacenar el primer y último contacto
         const primerContacto = contactos[0];
         const ultimoContacto = contactos[contactos.length - 1];
 
+        // Mostrar en pantalla el primer y último contacto
         document.write(`Primer contacto: ${primerContacto.nombre} / ${primerContacto.telefono} / ${primerContacto.email}<br>`);
         document.write(`Último contacto: ${ultimoContacto.nombre} / ${ultimoContacto.telefono} / ${ultimoContacto.email}`);
     </script>
