@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //simulacion de un cajero automatico que meta una cantidad que compruebe que el salgo este disponible y lo descuenta
+    //si no esta disponible lanzar un error
+
+  
+
+    let saldo = Number(1000);
+
+    let cantidad = Number(prompt("Introduce la cantidad a retirar"));
+
+    // saldo < cantidad ? window.alert('Saldo insuficiente') : window.alert('Te quedan ' + (saldo - cantidad) + ' euros');
+
+    function retirarDinero(saldo, cantidad) {
+        if (saldo > cantidad) { 
+            saldo -= cantidad;
+            return saldo;
+        }else{
+            throw new Error('Saldo insuficiente');
+        }
+    }
+
+    try {
+        saldo = retirarDinero(saldo, cantidad);
+        window.alert('Te quedan ' + saldo + ' euros');
+    } catch (err) {
+        window.alert(err);
+    }
+
+
+    </script>
+</body>
+</html>

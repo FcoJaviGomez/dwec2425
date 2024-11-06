@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //funcion de comprobar el mes
+        //comprobar si el numero esta entre el 1 y el 12 y si el numero no esta entre estos valores lanzar un error
+
+        //pedir un numero por pantalla
+
+        //comprobar si el numero esta entre el 1 y el 12
+        //si no esta entre estos valores lanzar un error
+        //si esta entre estos valores mostrar un mensaje por pantalla
+        let meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+       
+        let numero = prompt('Introduce un numero del 1 al 12');
+
+        function comprobarMes(mes){
+            if(mes < 1 || mes > 12){
+                throw new Error ('El mes debe estar entre 1 y 12');
+            }
+            else{
+                window.alert('El mes es ' + meses[mes - 1]);
+            }
+        }
+
+        try{
+            comprobarMes(numero);
+        }
+        catch(e){
+            console.error(e.name + ': ' + e.message);
+        }
+
+       
+        // try{
+        //     throw new Error('OhOh');
+        // }
+        // catch(e){
+        //     console.erros(e.name + ': ' + e.message);
+        // }
+    </script>
+</body>
+</html>
