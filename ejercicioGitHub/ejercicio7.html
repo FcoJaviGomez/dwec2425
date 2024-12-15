@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Contactos</title>
+</head>
+<body>
+    <script>
+        // Declaración de una constante de tipo array con objetos
+        const contactos = [
+            { nombre: "Javi Gómez", telefono: "1111 111 111", email: "javig@gmail.com" },
+            { nombre: "Pepe Sanz", telefono: "2222 222 222", email: "pepes@gmail.com" },
+            { nombre: "Ana Mena", telefono: "3333 333 333", email: "anam@gmail.com" }
+        ];
+
+        // Función para mostrar un contacto específico
+        function showContact(contactos, index) {
+            if (Array.isArray(contactos) && contactos[index]) {
+                const contacto = contactos[index];
+                alert(`Contacto:\nNombre: ${contacto.nombre}\nTeléfono: ${contacto.telefono}\nEmail: ${contacto.email}`);
+            } else {
+                alert("El índice no es válido o no se ha pasado una lista de contactos válida.");
+            }
+        }
+
+        // Función para mostrar todos los contactos
+        function showAllContacts(contactos) {
+            if (Array.isArray(contactos)) {
+                if (contactos.length === 0) {
+                    alert("La lista de contactos está vacía.");
+                } else {
+                    let listaContactos = "Todos los contactos:\n";
+                    for (let i = 0; i < contactos.length; i++) {
+                        const contacto = contactos[i];
+                        listaContactos += `${i + 1}. Nombre: ${contacto.nombre}, Teléfono: ${contacto.telefono}, Email: ${contacto.email}\n`;
+                    }
+                    alert(listaContactos);
+                }
+            } else {
+                alert("La lista de contactos no es válida.");
+            }
+        }
+
+        // Función para agregar un nuevo contacto
+        function addNewContact(contactos, nombre, telefono, email) {
+            if (Array.isArray(contactos) && nombre && telefono && email) {
+                contactos.push({ nombre, telefono, email });
+                alert("Contacto añadido con éxito.");
+            } else {
+                alert("Todos los datos (nombre, teléfono y email) son obligatorios. El contacto no se ha añadido.");
+            }
+        }
+
+        // Función para ordenar los contactos según un criterio
+        function sortContacts(contactos, criterio) {
+            if (criterio === "nombre") {
+                contactos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+            } else if (criterio === "telefono") {
+                contactos.sort((a, b) => a.telefono.localeCompare(b.telefono));
+            } else if (criterio === "email") {
+                contactos.sort((a, b) => a.email.localeCompare(b.email));
+            }
+            alert(`Los contactos se han ordenado por ${criterio}.`);
+        }
+
+        // Función principal para manejar el menú
+        function mainMenu() {
+            let opcion;
+            do {
+                opcion = prompt("¿Qué quieres hacer? Escribe una de las siguientes opciones:\n\n- 'primero' para mostrar el primer contacto\n- 'último' para mostrar el último contacto\n- 'todos' para mostrar todos los contactos\n- 'nuevo' para añadir un nuevo contacto\n- 'ordenar' para ordenar los contactos\n- 'salir' para finalizar el programa");
+
+                if (opcion === "primero") {
+                    showContact(contactos, 0); // Mostrar el primer contacto
+                } else if (opcion === "último") {
+                    showContact(contactos, contactos.length - 1); // Mostrar el último contacto
+                } else if (opcion === "todos") {
+                    showAllContacts(contactos); // Mostrar todos los contactos
+                } else if (opcion === "nuevo") {
+                    const nuevoNombre = prompt("Introduce el nombre del nuevo contacto:");
+                    const nuevoTelefono = prompt("Introduce el teléfono del nuevo contacto:");
+                    const nuevoEmail = prompt("Introduce el email del nuevo contacto:");
+                    addNewContact(contactos, nuevoNombre, nuevoTelefono, nuevoEmail); // Agregar un nuevo contacto
+                } else if (opcion === "ordenar") {
+                    const criterio = prompt("¿Cómo quieres ordenar los contactos? Escribe 'nombre', 'telefono' o 'email'").toLowerCase();
+                    if (criterio === "nombre" || criterio === "telefono" || criterio === "email") {
+                        sortContacts(contactos, criterio); // Ordenar los contactos
+                    } else {
+                        alert("Opción no válida para ordenar. Debes escribir 'nombre', 'telefono' o 'email'.");
+                    }
+                } else if (opcion === "salir") {
+                    alert("Gracias por usar la lista de contactos. ¡Hasta pronto!");
+                } else {
+                    alert("Opción no válida. Por favor, elige una opción correcta.");
+                }
+            } while (opcion !== "salir");
+        }
+
+        // Llamada a la función principal para iniciar el programa
+        mainMenu();
+    </script>
+</body>
+</html>
