@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size: 2em;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reloj</h1>
+    <p id="reloj">Reloj no iniciado</p> 
+    <button onclick="reloj = setInterval(iniciar,1000)">Iniciar reloj</button>
+    <button onclick="clearInterval(reloj)">Detener reloj</button>
+
+    <script>
+        let reloj;
+
+        function iniciar(){
+            var miFecha = new Date();
+            document.getElementById("reloj").innerHTML = miFecha.toLocaleTimeString();
+        }
+
+    </script>
+</body>
+</html>

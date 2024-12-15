@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    // Función constructora
+    function Persona(nombre, edad,ano) {
+    this.nombre = nombre;
+    this.edad = edad;
+    this.ano = ano;
+    }   
+
+    // Añadiendo métodos al prototype de Persona
+    Persona.prototype.saludar = function() {
+    window.alert(`Hola, mi nombre es ${this.nombre} y tengo ${this.edad} años.`);
+    };
+
+    // Crear una instancia de Persona
+    const persona1 = new Persona('Juan', 25, 1995);
+    const persona2 = new Persona('Ana', 30, 1990);
+
+    // Llamar al método saludar
+    persona1.saludar(); // "Hola, mi nombre es Juan y tengo 25 años."
+    persona2.saludar(); // "Hola, mi nombre es Ana y tengo 30 años."
+
+    //con juan.__proto__ es una referencia al prototype de la función constructora Persona
+
+    window.alert(persona1.__proto__ === Persona.prototype); // true
+
+    //object.getPrototypeOf(obj) es una forma más moderna de acceder al prototype de un objeto
+    window.alert(Object.getPrototypeOf(persona1) === Persona.prototype); // true
+
+    persona1.nacionalidad = 'Mexicano';
+    persona1.nacimiento= function(){
+        return "Nacio en el año: " + this.ano;
+    }
+    window.alert(persona1.nacionalidad); // "Mexicano"
+    window.alert(persona2.nacionalidad); // undefined
+    window.alert(persona1.nacimiento()); // "Nacio en el año 1995"
+
+    Persona.prototype.boda = 2020;
+    Persona.prototype.fechaBoda = function(){
+        return "La boda fue en el año: " + this.boda;
+    }
+    window.alert(persona1.boda); // 2020
+
+    var juan = new Persona('Juan', 25, 1995);
+    alert(juan.nombre);
+    alert(juan.fechaBoda());
+
+    </script>
+</body>
+</html>

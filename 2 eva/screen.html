@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //tamaño pantalla sin barra de tareas
+
+        var texto = "";
+        texto+= "<br>Ancho de la pantalla: " + screen.width;
+        texto+= "<br>Alto de la pantalla: " + screen.height;
+   
+
+        //tamaño pantalla sin barra de tareas
+        texto+= "<br>Ancho de la pantalla sin barra de tareas: " + screen.availWidth;
+        texto+= "<br>Alto de la pantalla sin barra de tareas: " + screen.availHeight;
+
+        //profuncidad de color de la pantalla
+        texto+= "<br>Profundidad de color de la pantalla: " + screen.colorDepth;
+
+        //resolucion de color en bits por pixel 
+        texto+= "<br>Resolucion de color en bits por pixel: " + screen.pixelDepth;
+
+        document.write(texto);
+        
+
+
+    </script>
+</body>
+</html>

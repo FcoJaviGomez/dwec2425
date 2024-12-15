@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //crear una array de animales   
+
+
+
+        let user = {
+            name: "Otto",
+            role: "arquero",
+            life: 99,
+            features: ["learn", "code", "paint"]
+        };
+
+        const fullUser = {
+            ...structuredClone(user),
+            power: 25,
+            life:50
+        }
+
+        const {name,...rest}=user;
+
+        // console.log(user.featurs);
+        // console.log(fullUser.features);
+
+        // console.log(user.name);
+        // console.log(user.rest);
+
+        // console.log(Object.keys(user));
+        // console.log(Object.values(user));
+        // console.log(Object.entries(user));
+
+        //convertir una array en un objeto Object.fromEntries
+        const keys =  ['name', 'life', 'power', 'talk'];
+        const values = [ 'Otto', 99, 25, function(){return "hola"}];
+        const entries = [];
+
+        for(let i of Object.keys(keys)){
+            const key = keys[i];
+            const value = values[i];
+            entries.push([key, value]);
+        }
+        
+        // const user13 = {}
+        // // for in
+        // for(let i in key){
+        //     user13[key[i]] = value[i];
+        // }
+
+        const obj = Object.fromEntries(entries);
+
+
+        // for of
+        // for(let i = 0; i < key.length; i++){
+        //     user13[key[i]] = value[i];
+        // }
+
+        // console.log(user13);
+        // console.log(user13.talk());
+        
+        console.log(entries);
+
+        console.log(obj);
+        
+
+        
+        
+    </script>
+</body>
+</html>

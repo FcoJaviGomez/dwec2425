@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="tradicional">Pulsa aqui</h3>
+    <h3 id="tradicional2">Pulsa aqui</h3>
+    <script>
+        window.onload = function(){
+            alert("La página ha cargado correctamente");
+            document.getElementById("tradicional2").onclick = miMensaje;
+        }
+    
+        function miMensaje(){
+            document.getElementById("tradicional2").innerHTML = "Modelo tradicional 2";
+        }
+
+        document.getElementById("tradicional").onclick = cambiar;
+        function cambiar(){
+            document.getElementById("tradicional").innerHTML = "Modelo tradicional";
+            document.getElementById("tradicional").onclick = null;
+        }
+    </script>
+</body>
+</html>

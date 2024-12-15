@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Modelo de eventos avanzados del W3C</h1>
+    <h3 id="w3c">Modelo del 3wc</h3>
+    <script>
+        document.getElementById("w3c").addEventListener("click", saludarUnaVez, false);
+        document.getElementById("w3c").addEventListener("click", colorear, false);
+        document.getElementById("w3c").addEventListener("mouseover", fondo, false);
+
+        function saludarUnaVez(){
+            alert("Holaaaa");          
+        }
+
+        function colorear(){
+            document.getElementById("w3c").style.color = "red";
+        }
+
+        function fondo(){
+            document.getElementById("w3c").style.backgroundColor = "yellow";
+        }
+    </script>
+</body>
+</html>

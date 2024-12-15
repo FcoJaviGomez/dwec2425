@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const PUNTOS_CARDINALES = ['N', 'E', 'S', 'O'];
+
+    // Control inicial de errores
+    do{
+        try{
+            var minutos = parseInt(prompt('Introduce los minutos (6-12)'));
+            if(validarMinutos(minutos)){
+                alert('Los minutos son ' + minutos);
+            }
+        }
+        catch(e){
+            alert(e.name + ': ' + e.message);
+        }
+    }
+    while(validarMinutos(minutos) === undefined);
+
+
+// creame una funcion de validacion para controlar los minutos
+    function validarMinutos(minutos){
+        if (isNaN(minutos)) {
+            throw new Error('El valor introducido no es un número');
+        }
+        if (minutos === null) {
+            throw new Error('El valor introducido es nulo');
+        }
+        if (minutos < 6) {
+            throw new Error('El valor introducido es menor que 6');
+        }
+        if (minutos > 12) {
+            throw new Error('El valor introducido es mayor que 12');
+        }
+        if (minutos % 2 !== 0) {
+            throw new Error('El valor introducido no es un número par');
+        }
+        return minutos;
+    }
+
+
+    </script>
+</body>
+</html>

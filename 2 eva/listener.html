@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="miTexto">Este texto lo voy a modificar</p>
+    <button id="miBoton">Pulsar</button>
+    <script>
+        function alPulsar(){
+            var x = document.getElementById("miTexto");
+            x.innerHTML = "Has pulsado el botón";
+        }
+        document.getElementById("miBoton").addEventListener("click", alPulsar, false);
+    </script>
+
+    <!-- onblur
+        onchange
+        onfocus
+        onselect
+        onsubmit
+        onreset
+        onkeydown
+        onkeypress
+        onkeyup
+
+        eventos de raton
+        onclick
+        ondblclick
+        onmousedown
+        onmouseup
+        
+    -->
+</body>
+</html>

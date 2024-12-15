@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let palabra = prompt("Introduce una palabra");
+        // let vocales = ['a', 'e', 'i', 'o', 'u, A, E, I, O, U'];
+        // let primeraVocal = null;
+
+        // for (let i = 0; i < palabra.length; i++) {
+        //     if (vocales.includes(palabra[i])) {
+        //         primeraVocal = palabra[i];
+
+        //         if (primeraVocal) {
+        //             alert("La primera vocal es: " + primeraVocal + " con la posicion " + (i+1));
+        //             break;
+        //         }               
+        //     }    
+        // }
+        // if (!primeraVocal) {
+        //     alert("No se ha encontrado ninguna vocal");
+        // }
+
+        let palabra = prompt("Introduce la palabra:")
+        const patrones = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+        let posicion = 0;
+        // palabra = palabra.toLowerCase();
+
+        for (let i = 0; i < palabra.length; i++) { 
+            let letra= palabra[i];
+            if(patrones.indexOf(letra) !== -1){
+               posicion = i;
+               break;
+            }
+        }
+
+        alert(`La primera vocal es: ${palabra[posicion]} en la posicion ${posicion+1}`)
+
+        
+
+    </script>
+</body>
+</html>

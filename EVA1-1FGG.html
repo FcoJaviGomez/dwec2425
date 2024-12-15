@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1 - Paseo por la Ciudad</title>
+</head>
+<body>
+   
+
+    <script>
+        function generarPaseo(minutos){
+           //La aplicación debe funcionar solo para tiempos comprendidos entre 8 y 22 minutos
+              if(minutos < 8 || minutos > 22){
+                alert("El tiempo de paseo debe estar entre 8 y 22 minutos");
+                return;
+              }
+
+                let direcciones = ["n", "e", "s", "o"];
+                let pasos = [];
+                for(let i = 0; i < minutos; i++){
+                    let direccion = direcciones[Math.floor(Math.random() * direcciones.length)];
+                    pasos.push(direccion);
+                }
+
+                console.log(pasos);
+                alert(pasos);
+
+        }
+
+        let minutos =  prompt("Introduce el tiempo en minutos que quieres caminar por la ciudad: ");
+        generarPaseo(minutos)
+
+        
+
+    </script>
+</body>
+</html>

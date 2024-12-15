@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2 - Pirámide Invertida</title>
+</head>
+<body>
+    <script>
+        // Función que dibuja una pirámide invertida según el número dado				                                                             1
+
+
+        function piramideInvertida(numero) {
+            // Validación para asegurar que el número esté entre 1 y 50
+            if (isNaN(numero) || numero < 1 || numero > 50) {
+                alert("Introduce un número válido entre 1 y 50.");
+            } else {
+                let piramide = "";  // Variable que contendrá toda la pirámide
+                for (let i = numero; i > 0; i--) {
+                    // Genera la línea actual repitiendo el número `i` `i` veces
+                    let numeros = String(i).repeat(i);
+                    
+                    // Calcula los espacios para centrar aproximadamente cada línea
+                    let espacios = " ".repeat((numero - i) * 2);
+
+                    // Construye la línea con espacios y números
+                    let linea = espacios + numeros;
+
+                    // Agrega la línea a la pirámide con un salto de línea
+                    piramide += linea + "\n";
+                }
+                
+                // Muestra el resultado en la consola y en una alerta       
+                console.log(piramide);
+                alert(piramide);
+            }
+        }
+
+        // Solicita al usuario que ingrese un número y llama a la función
+        let numero = parseInt(prompt("Introduce un número entre 1 y 50:"));
+        piramideInvertida(numero);
+    </script>
+</body>
+</html>
+

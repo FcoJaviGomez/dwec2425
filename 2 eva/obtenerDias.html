@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var fechaActual = new Date();
+    var fechaFija = new Date(2020, 0, 1);
+    var dias = Math.floor((fechaActual - fechaFija) / (1000 * 60 * 60 * 24));
+    var meses = Math.floor((fechaActual - fechaFija) / (1000 * 60 * 60 * 24 * 30));
+    
+    window.alert(`Han pasado ${dias} días, ${meses} meses desde el 1 de enero de 2020.`);
+    
+
+
+
+    </script>
+</body>
+</html>

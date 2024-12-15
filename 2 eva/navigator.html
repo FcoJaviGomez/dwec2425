@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="navegador"></p>
+    <script>
+        // Guarda informacion sobre el navegador
+        // 
+        var texto = "";
+        texto += "<br/>CodeName: " + navigator.appCodeName;
+        texto += "<br/>Name: " + navigator.appName;
+        texto += "<br/>Version: " + navigator.appVersion;
+        texto += "<br/>Motor: " + navigator.product;
+        texto += "<br/>Cookies: " + navigator.cookieEnabled;
+        texto += "<br/>Language: " + navigator.language;
+        texto += "<br/>Online: " + navigator.onLine;
+        texto += "<br/>Platform: " + navigator.platform;
+        texto += "<br/>User-agent header: " + navigator.userAgent;
+        texto += "<br/>Java enabled: " + navigator.javaEnabled();
+        document.getElementById("navegador").innerHTML = texto;
+    </script>
+</body>
+</html>

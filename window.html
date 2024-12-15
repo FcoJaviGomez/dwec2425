@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+</head>
+<body>
+
+    <!-- Propiedades basicas -->
+    <div id="ventana"></div>
+
+
+    <script>
+
+        //Propiedades basicas
+        window.name = "Mi ventana";
+        var texto = "";
+        texto+= "<br>Nombre: " + window.name;
+        texto+= "<br>Ancho externo: " + window.outerWidth;
+        texto+= "<br>Alto externo: " + window.outerHeight;
+        texto+= "<br>Ancho interno: " + window.innerWidth;
+        texto+= "<br>Alto interno: " + window.innerHeight;
+        texto+= "<br>Scroll Horizontal: " + window.pageXOffset;
+        texto+= "<br>Scroll Vertical: " + window.pageYOffset;
+        //distancia desde el borde izquierdo de la ventana hasta el borde izquierdo de la pantalla
+        texto+= "<br>Posicion X: " + window.screenX;
+
+        //distancia desde el borde superior de la ventana hasta el borde superior de la pantalla
+        texto+= "<br>Posicion Y: " + window.screenY;
+
+        document.getElementById("ventana").innerHTML = texto;
+
+        var miVentana;
+
+        //Metodos
+        //window.open(URL, nombre, opciones) -> abre una ventana nueva
+        function abrirVentana(){
+            miVentana = window.open("", "", "width=400, height=400");
+        }
+
+        //window.close() -> cierra la ventana actual
+        function cerrarVentana(){
+            miVentana.close();
+        }
+
+        //window.resizeTo(ancho, alto) -> redimensiona la ventana
+        function redimensionarVentana(){
+            miVentana.resizeTo(800, 800);
+        }
+
+        //window.moveTo(x, y) -> mueve la ventana
+        function moverVentanaFija(){
+            miVentana.moveTo(200, 200);
+        }
+
+        //window.moveby(x, y) -> mueve la ventana en base a su posicion actual
+        function moverVentana(){
+            miVentana.moveBy(200, 200);
+        }
+
+        //window.focus() -> pone el foco en la ventana
+        function ponerFoco(){
+            miVentana.focus();
+        }
+
+        //window.print() -> imprime la ventana
+        function imprimirVentana(){
+            window.print();
+        }
+
+    </script>
+    <button onclick="abrirVentana()">Abrir ventana</button>
+    <button onclick="cerrarVentana()">Cerrar ventana</button>
+    <button onclick="redimensionarVentana()">Redimensionar ventana</button>
+    <button onclick="moverVentanaFija()">Mover ventana fija</button>
+    <button onclick="moverVentana()">Mover ventana</button>
+    <button onclick="ponerFoco()">Poner foco</button>
+    <button onclick="imprimirVentana()">Imprimir ventana</button>
+    
+</body>
+</html>
